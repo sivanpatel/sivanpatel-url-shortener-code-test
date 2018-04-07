@@ -1,5 +1,26 @@
 # Url Shortener Code Test
 
+### To run this app
+```
+bundle install
+rackup
+
+curl localhost:9292 -XPOST -d '{ "url": "http://www.farmdrop.com"  }'
+curl -v localhost:9292/abc123
+```
+
+To run the tests:
+```
+rspec
+```
+
+#### General Thoughts
+
+What I have done here is the basic functionality. I couldn't however find a way to make the url shorter.
+
+I tried writing my own encryption/decryption algorithm to make a short url, but I was not very successful with that.
+
+
 Without using an external database, we'd like you to create a URL shortening
 service. The URLs do not need to persist between restarts, but should be
 shareable between different clients while the server is running.
