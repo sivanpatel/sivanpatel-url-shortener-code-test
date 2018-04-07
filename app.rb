@@ -1,9 +1,13 @@
 require 'sinatra'
+require 'json'
 
-get '/' do
-  'asdfasdf'
+post '/' do
+  content_type :json
+  parameters = JSON.parse(request.body.read)
+  return_params = {
+                    "short_url": "/abc123",
+                    "url": parameters["url"]
+                  }
+  JSON[return_params]
 end
 
-post '/:url' do
-  puts params[:url]
-end
