@@ -4,7 +4,6 @@ require './lib/url_encrypter'
 require 'json'
 
 post '/' do
-  content_type :json
   parameters = JSON.parse(request.body.read)
   url = UrlNormalizer.normalized_url(parameters["url"])
   short_url = "/#{UrlEncrypter.encrypt(url)}"
